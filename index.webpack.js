@@ -158,7 +158,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst start_1 = __importDefault(__webpack_require__(/*! ./start */ \"./src/start.ts\"));\n__webpack_require__(/*! ./sass/index.scss */ \"./src/sass/index.scss\");\nconst DOM = document.querySelector('#app');\n(0, start_1.default)(DOM);\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/index.ts?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst start_1 = __importDefault(__webpack_require__(/*! ./start */ \"./src/start.ts\"));\n__webpack_require__(/*! ./sass/index.scss */ \"./src/sass/index.scss\");\nconst hashes_1 = __importDefault(__webpack_require__(/*! ./security/hashes */ \"./src/security/hashes.ts\"));\nconst DOM = document.querySelector('#app');\nDOM.id = (0, hashes_1.default)();\n(0, start_1.default)(DOM);\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/index.ts?");
 
 /***/ }),
 
