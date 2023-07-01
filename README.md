@@ -15,7 +15,9 @@ Web Security
         
        
 
-     in index.js see the differences between JS and TS
+     in index.js see the difference between JS and TS 
+
+- in ts it has specific HTMLType include in which type of a variable or a document.
 
 ![image](https://github.com/Renstrio24p/Standalone-TypescriptES10/assets/123795328/121c6aa4-140d-4a6d-8097-b588d0e20404)
 
