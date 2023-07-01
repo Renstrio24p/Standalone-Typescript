@@ -15,13 +15,15 @@ Web Security
         
        
 
-     in index.js
+     in index.js see the differences between JS and TS
 
-![image](https://github.com/Renstrio24p/Standalone-JavascriptES10/assets/123795328/423c9c1a-bb77-4528-bf90-cb714d98bf53)
+![image](https://github.com/Renstrio24p/Standalone-TypescriptES10/assets/123795328/121c6aa4-140d-4a6d-8097-b588d0e20404)
+
 
       Start.js
         
-![image](https://github.com/Renstrio24p/Standalone-JavascriptES10/assets/123795328/45f3a25f-9489-4498-8b97-e910ac18ae3a)﻿
+![image](https://github.com/Renstrio24p/Standalone-TypescriptES10/assets/123795328/3dd4c5a9-e0b3-474a-8d58-16542f08130e)
+
 
 Requires : Node JS
 
