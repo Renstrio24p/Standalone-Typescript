@@ -155,10 +155,10 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst start_1 = __importDefault(__webpack_require__(/*! ./start */ \"./src/start.ts\"));\n__webpack_require__(/*! ./sass/index.scss */ \"./src/sass/index.scss\");\nconst hashes_1 = __importDefault(__webpack_require__(/*! ./security/hashes */ \"./src/security/hashes.ts\"));\nconst DOM = document.querySelector('#app');\nDOM.id = (0, hashes_1.default)();\n(0, start_1.default)(DOM);\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./start */ \"./src/start.ts\");\n/* harmony import */ var _sass_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sass/index.scss */ \"./src/sass/index.scss\");\n/* harmony import */ var _security_hashes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./security/hashes */ \"./src/security/hashes.ts\");\n\n\n\nconst DOM = document.querySelector('#app');\nDOM.id = (0,_security_hashes__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n(0,_start__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(DOM);\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/index.ts?");
 
 /***/ }),
 
@@ -166,10 +166,10 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /*!******************************!*\
   !*** ./src/render/render.ts ***!
   \******************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst Footer_1 = __importDefault(__webpack_require__(/*! ../ts/Footer */ \"./src/ts/Footer.ts\"));\nconst Counter_1 = __webpack_require__(/*! ../ts/Counter */ \"./src/ts/Counter.ts\");\nconst Rows_1 = __importDefault(__webpack_require__(/*! ../ts/Rows */ \"./src/ts/Rows.ts\"));\nconst hashes_1 = __importDefault(__webpack_require__(/*! ../security/hashes */ \"./src/security/hashes.ts\"));\nfunction Render() {\n    // Get Render's ID\n    const ContainerDOM = document.getElementById('container');\n    const APP = document.getElementById('count');\n    const Row = document.getElementById('rows');\n    const Foot = document.getElementById('footer');\n    // Hash Applied\n    window.addEventListener('DOMContentLoaded', () => {\n        ContainerDOM?.setAttribute('id', (0, hashes_1.default)());\n        APP?.setAttribute('id', (0, hashes_1.default)());\n        Row?.setAttribute('id', (0, hashes_1.default)());\n        Foot?.setAttribute('id', (0, hashes_1.default)());\n    });\n    // Render the JS Component\n    if (APP) {\n        (0, Counter_1.setupCounter)(APP);\n    }\n    if (Row) {\n        (0, Rows_1.default)(Row);\n    }\n    if (Foot) {\n        (0, Footer_1.default)(Foot);\n    }\n}\nexports[\"default\"] = Render;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/render/render.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Render)\n/* harmony export */ });\n/* harmony import */ var _ts_Footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ts/Footer */ \"./src/ts/Footer.ts\");\n/* harmony import */ var _ts_Counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ts/Counter */ \"./src/ts/Counter.ts\");\n/* harmony import */ var _ts_Rows__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ts/Rows */ \"./src/ts/Rows.ts\");\n/* harmony import */ var _security_hashes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../security/hashes */ \"./src/security/hashes.ts\");\n\n\n\n\nfunction Render() {\n    // Get Render's ID\n    const ContainerDOM = document.getElementById('container');\n    const APP = document.getElementById('count');\n    const Row = document.getElementById('rows');\n    const Foot = document.getElementById('footer');\n    // Hash Applied\n    window.addEventListener('DOMContentLoaded', () => {\n        ContainerDOM?.setAttribute('id', (0,_security_hashes__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\n        APP?.setAttribute('id', (0,_security_hashes__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\n        Row?.setAttribute('id', (0,_security_hashes__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\n        Foot?.setAttribute('id', (0,_security_hashes__WEBPACK_IMPORTED_MODULE_3__[\"default\"])());\n    });\n    // Render the JS Component\n    if (APP) {\n        (0,_ts_Counter__WEBPACK_IMPORTED_MODULE_1__.setupCounter)(APP);\n    }\n    if (Row) {\n        (0,_ts_Rows__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(Row);\n    }\n    if (Foot) {\n        (0,_ts_Footer__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(Foot);\n    }\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/render/render.ts?");
 
 /***/ }),
 
@@ -177,10 +177,10 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /*!********************************!*\
   !*** ./src/security/hashes.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst GenerateHashes = new Set();\nfunction UniqueHash() {\n    let hash;\n    do {\n        hash = Math.random().toString(36).substring(2);\n    } while (GenerateHashes.has(hash));\n    GenerateHashes.add(hash);\n    return hash;\n}\nexports[\"default\"] = UniqueHash;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/security/hashes.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ UniqueHash)\n/* harmony export */ });\nconst GenerateHashes = new Set();\nfunction UniqueHash() {\n    let hash;\n    do {\n        hash = Math.random().toString(36).substring(2);\n    } while (GenerateHashes.has(hash));\n    GenerateHashes.add(hash);\n    return hash;\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/security/hashes.ts?");
 
 /***/ }),
 
@@ -188,10 +188,10 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\ncons
 /*!**********************!*\
   !*** ./src/start.ts ***!
   \**********************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.cx = void 0;\nconst bind_1 = __importDefault(__webpack_require__(/*! classnames/bind */ \"./node_modules/classnames/bind.js\"));\nconst app_module_scss_1 = __importDefault(__webpack_require__(/*! ./sass/modules/app.module.scss */ \"./src/sass/modules/app.module.scss\"));\nconst render_1 = __importDefault(__webpack_require__(/*! ./render/render */ \"./src/render/render.ts\"));\nexports.cx = bind_1.default.bind(app_module_scss_1.default);\nfunction Start(start) {\n    start.innerHTML = (`\n            <div id='container' class=${(0, exports.cx)('d-flex-center-max')}>\n\n    <div class=${(0, exports.cx)('d-flex-center-gap-20')}>\n        <a href=\"https://www.typescriptlang.org/\">\n        <img \n            class=${(0, exports.cx)('ts-image')} \n            src='./src/images/Typescript.png' \n            alt='typescript logo'   \n        /></a>\n        <h1 class=${(0, exports.cx)('font-weight-400')}>Standalone - Typescript ES10</h1>\n        <a href=\"https://webpack.js.org/\">\n            <img class=${(0, exports.cx)('webpack-image')} \n                 src='./src/images/webpack.png' \n                 alt='webpack logo'\n            /></a>\n    </div>\n    <div>\n        <button class=${(0, exports.cx)('button-style')} id='count'></button>\n    </div>\n    <div  class=${(0, exports.cx)('d-flex-gap-20')} id=\"rows\"></div>\n    <footer class=${(0, exports.cx)('footer-abs-between')} id=\"footer\"></footer>\n\n</div>\n    `);\n    (0, render_1.default)();\n}\nexports[\"default\"] = Start;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/start.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   cx: () => (/* binding */ cx),\n/* harmony export */   \"default\": () => (/* binding */ Start)\n/* harmony export */ });\n/* harmony import */ var classnames_bind__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames/bind */ \"./node_modules/classnames/bind.js\");\n/* harmony import */ var classnames_bind__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames_bind__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sass/modules/app.module.scss */ \"./src/sass/modules/app.module.scss\");\n/* harmony import */ var _render_render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render/render */ \"./src/render/render.ts\");\n\n\n\nconst cx = classnames_bind__WEBPACK_IMPORTED_MODULE_0___default().bind(_sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nfunction Start(start) {\n    start.innerHTML = (`\n            <div id='container' class=${cx('d-flex-center-max')}>\n\n    <div class=${cx('d-flex-center-gap-20')}>\n        <a href=\"https://www.typescriptlang.org/\">\n        <img \n            class=${cx('ts-image')} \n            src='./src/images/Typescript.png' \n            alt='typescript logo'   \n        /></a>\n        <h1 class=${cx('font-weight-400')}>Standalone - Typescript ES10</h1>\n        <a href=\"https://webpack.js.org/\">\n            <img class=${cx('webpack-image')} \n                 src='./src/images/webpack.png' \n                 alt='webpack logo'\n            /></a>\n    </div>\n    <div>\n        <button class=${cx('button-style')} id='count'></button>\n    </div>\n    <div  class=${cx('d-flex-gap-20')} id=\"rows\"></div>\n    <footer class=${cx('footer-abs-between')} id=\"footer\"></footer>\n\n</div>\n    `);\n    (0,_render_render__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/start.ts?");
 
 /***/ }),
 
@@ -199,10 +199,10 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /*!***************************!*\
   !*** ./src/ts/Counter.ts ***!
   \***************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexports.setupCounter = void 0;\nfunction setupCounter(element) {\n    let counter = 0;\n    const setCounter = (count) => {\n        counter = count;\n        element.innerHTML = `count is ${counter}`;\n    };\n    element.addEventListener('click', () => setCounter(counter + 1));\n    setCounter(0);\n}\nexports.setupCounter = setupCounter;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Counter.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   setupCounter: () => (/* binding */ setupCounter)\n/* harmony export */ });\nfunction setupCounter(element) {\n    let counter = 0;\n    const setCounter = (count) => {\n        counter = count;\n        element.innerHTML = `count is ${counter}`;\n    };\n    element.addEventListener('click', () => setCounter(counter + 1));\n    setCounter(0);\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Counter.ts?");
 
 /***/ }),
 
@@ -210,10 +210,10 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexpo
 /*!**************************!*\
   !*** ./src/ts/Footer.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst start_1 = __webpack_require__(/*! ../start */ \"./src/start.ts\");\nfunction Footer(Footer) {\n    Footer.innerHTML = `\n        <div class=${(0, start_1.cx)('d-flex-between')}>\n            <span>Version 1.0.3</span>\n            <img class=${(0, start_1.cx)('sass_img')} src='./src/images/sass.png' alt='sass logo' />\n        </div>\n        <div class=${(0, start_1.cx)('d-flex-between')}>\n            <img class=${(0, start_1.cx)('github_img')} src='./src/images/github.png' alt='github' />\n            <span>Codespaces</span>\n        </div>\n    `;\n}\nexports[\"default\"] = Footer;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Footer.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Footer)\n/* harmony export */ });\n/* harmony import */ var _start__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../start */ \"./src/start.ts\");\n\nfunction Footer(Footer) {\n    Footer.innerHTML = `\n        <div class=${(0,_start__WEBPACK_IMPORTED_MODULE_0__.cx)('d-flex-between')}>\n            <span>Version 1.0.3</span>\n            <img class=${(0,_start__WEBPACK_IMPORTED_MODULE_0__.cx)('sass_img')} src='./src/images/sass.png' alt='sass logo' />\n        </div>\n        <div class=${(0,_start__WEBPACK_IMPORTED_MODULE_0__.cx)('d-flex-between')}>\n            <img class=${(0,_start__WEBPACK_IMPORTED_MODULE_0__.cx)('github_img')} src='./src/images/github.png' alt='github' />\n            <span>Codespaces</span>\n        </div>\n    `;\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Footer.ts?");
 
 /***/ }),
 
@@ -221,10 +221,10 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\ncons
 /*!************************!*\
   !*** ./src/ts/Rows.ts ***!
   \************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst app_module_scss_1 = __importDefault(__webpack_require__(/*! ../sass/modules/app.module.scss */ \"./src/sass/modules/app.module.scss\"));\nfunction Rows(rows) {\n    rows.innerHTML = `\n        <div class=${app_module_scss_1.default.box}>\n            <p>supports ES6+</p>\n        </div>\n        <div class=${app_module_scss_1.default.box}>\n            <p>Modular SCSS</p>\n        </div>\n        <div class=${app_module_scss_1.default.box}>\n            <p>Web Security Features</p>\n        </div>\n    `;\n}\nexports[\"default\"] = Rows;\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Rows.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Rows)\n/* harmony export */ });\n/* harmony import */ var _sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/modules/app.module.scss */ \"./src/sass/modules/app.module.scss\");\n\nfunction Rows(rows) {\n    rows.innerHTML = `\n        <div class=${_sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].box}>\n            <p>supports ES6+</p>\n        </div>\n        <div class=${_sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].box}>\n            <p>Modular SCSS</p>\n        </div>\n        <div class=${_sass_modules_app_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].box}>\n            <p>Web Security Features</p>\n        </div>\n    `;\n}\n\n\n//# sourceURL=webpack://standalone-javascript-beta/./src/ts/Rows.ts?");
 
 /***/ })
 
@@ -248,7 +248,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -304,7 +304,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/index.ts");
 /******/ 	
 /******/ })()
