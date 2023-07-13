@@ -1,5 +1,5 @@
 {
-  "name": "standalone-javascript-beta",
+  "name": "standalone-typescript",
   "version": "1.0.2",
   "description": "Pure Vanilla TS",
   "main": "/src/index.ts",
