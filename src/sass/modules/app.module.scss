@@ -1,3 +1,4 @@
+@import '../mixins.scss';
 
 * {
 	user-select: none;
@@ -60,7 +61,7 @@
 	background: radial-gradient(
 		circle,
 		rgba(255, 255, 255, 1) 0%,
-		rgb(32, 32, 7) 0%,
+		rgb(0, 0, 0) 0%,
 		rgb(95, 212, 228) 95%
 	);
     flex-direction: column;
@@ -80,7 +81,15 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+	will-change: filter;
+    transition: filter 300ms;
 }
+
+.button-style:hover {
+	background-color: rgb(210, 248, 248);
+	filter: drop-shadow(0 0 2em #f3f3f1fb);
+	transition: .5s;
+} 
 
 .footer-abs-between {
 	position: absolute;
@@ -106,4 +115,24 @@
 	background-color: gray;
 	padding: 10px;
 	border-radius: 5px;
+	will-change: filter;
+    transition: filter 300ms;
+}
+
+.box:hover {
+	background-color: rgb(177, 250, 250);
+	transition: .5s;
+	filter: drop-shadow(0 0 2em #f3f3f1fb);
+}
+
+@media screen and (max-width:760px) {
+	@include Tablet;
+}
+
+@media screen and (max-width:564px) {
+	@include Mobile;
+}
+
+@media  screen and (max-width: 486px) {
+	@include Small-Mobile;
 }

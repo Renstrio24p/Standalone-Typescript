@@ -16,7 +16,7 @@ export default function Start(start: HTMLElement): void {
             src='./src/images/Typescript.png' 
             alt='typescript logo'   
         /></a>
-        <h1 class=${cx('font-weight-400')}>Standalone - Typescript ES10</h1>
+        <h1 class=${cx('font-weight-400')}>Standalone - Typescript</h1>
         <a href="https://webpack.js.org/">
             <img class=${cx('webpack-image')} 
                  src='./src/images/webpack.png' 
