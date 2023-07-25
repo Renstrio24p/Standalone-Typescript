@@ -7,14 +7,14 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.webpack.js',
+    filename: 'webpack.bundle.js',
     clean: true,
   },
   target: 'web',
   devServer: {
-    port: 5500,
+    port: 4600,
     static: {
-      directory: path.join(__dirname, 'src'),
+      directory: path.join(__dirname, 'src/images'),
       watch: true,
     },
     open: true,
@@ -60,7 +60,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "src", to: "src" },
+        { from: "src/images", to: "./" },
       ],
     }),
   ],

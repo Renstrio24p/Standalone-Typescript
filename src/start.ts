@@ -13,13 +13,13 @@ export default function Start(start: HTMLElement): void {
         <a href="https://www.typescriptlang.org/">
         <img 
             class=${cx('ts-image')} 
-            src='./src/images/Typescript.png' 
+            src='Typescript.png' 
             alt='typescript logo'   
         /></a>
         <h1 class=${cx('font-weight-400')}>Standalone - Typescript</h1>
         <a href="https://webpack.js.org/">
             <img class=${cx('webpack-image')} 
-                 src='./src/images/webpack.png' 
+                 src='webpack.png' 
                  alt='webpack logo'
             /></a>
     </div>
