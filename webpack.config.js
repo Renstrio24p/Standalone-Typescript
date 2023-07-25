@@ -22,7 +22,7 @@ module.exports = {
     liveReload: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json",'.scss']
+    extensions: [".js",".ts", ".tsx", ".json",'.scss']
   },
   module: {
     rules: [
