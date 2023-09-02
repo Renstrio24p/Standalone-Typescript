@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -24,7 +25,7 @@ module.exports = {
     liveReload: true,
   },
   resolve: {
-    extensions: ['.js', '.ts', '.json', '.scss'],
+    extensions: ['.js', '.ts', '.tsx', '.json', '.scss'],
   },
   module: {
     rules: [
@@ -48,6 +49,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         exclude: /\.module\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -78,9 +83,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
+      template: path.join(__dirname, './', 'index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/images', to: './' },
+      ],
     }),
   ],
+  optimization: {
+    minimizer: [new TerserPlugin()],
+  },
 };
 
 // You Should not Modify this file to prevent any issue unless you know webpack very well
