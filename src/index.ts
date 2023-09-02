@@ -1,7 +1,7 @@
 import Start from "./start";
-import './sass/index.scss';
-import UniqueHash from "./security/hashes";
+import './assets/sass/index.scss';
+import UniqueHash from "./assets/security/hashes";
 
-const DOM = document.querySelector<HTMLDivElement>('#app');
+const DOM = document.querySelector('#app') as HTMLDivElement;
 DOM!.id = UniqueHash();
 Start(DOM!);

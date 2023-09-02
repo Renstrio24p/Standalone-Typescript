@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
-import styles from './sass/modules/app.module.scss';
-import Render from "./render/render";
+import styles from './assets/sass/modules/app.module.scss';
+import Render from "./assets/render/render";
 
 export const cx = classNames.bind(styles);
 
@@ -13,14 +13,14 @@ export default function Start(start: HTMLElement): void {
             <a href="https://www.typescriptlang.org/">
                 <img 
                     class=${cx('ts-image')} 
-                    src='Typescript.png' 
+                    src='images/Typescript.png' 
                     alt='typescript logo'   
                 />
             </a>
             <h1 class=${cx('font-weight-400')}>Standalone - Typescript</h1>
             <a href="https://webpack.js.org/">
                 <img class=${cx('webpack-image')} 
-                 src='webpack.png' 
+                 src='images/webpack.png' 
                  alt='webpack logo'
                 />
             </a>
