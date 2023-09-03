@@ -1,6 +1,6 @@
 {
   "name": "standalone-typescript",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "description": "Pure Vanilla TS",
   "main": "/src/index.ts",
   "scripts": {

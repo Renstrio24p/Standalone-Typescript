@@ -11,7 +11,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/[name].[contenthash].js',
-    clean: true,
   },
   target: 'web',
   devServer: {
@@ -48,6 +47,20 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         exclude: /\.module\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[contenthash][ext]', // Output path for images
+        },
+      },
+      {
+        test: /\.(mp4|webm|ogg|ogv)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'videos/[name].[contenthash][ext]', // Output path for videos
+        },
       },
     ],
   },
