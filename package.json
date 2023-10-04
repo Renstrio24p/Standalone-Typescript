@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier . --write",
-    "start": "webpack-dev-server .",
-    "build": "webpack ."
+    "start": "webpack-dev-server --mode development --config webpack.config.ts",
+    "build": "webpack --mode production --config webpack.config.ts"
   },
   "keywords": [],
   "author": "",
