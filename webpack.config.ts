@@ -10,11 +10,18 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/[name].[contenthash].js',
-    // publicPath: '/',
+    // publicPath: '/', // this for server rendering 
   },
   target: 'web',
   devServer: {
     port: 4500,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8800', // Proxy Origin 
+        secure: false,
+        changeOrigin: true,
+      }
+    },
     static: {
       directory: path.join(__dirname, 'src'),
     },
