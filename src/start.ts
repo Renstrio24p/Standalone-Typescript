@@ -14,7 +14,7 @@ export default async function Start(start: HTMLElement): Promise<void> {
                       alt='typescript logo'   
                   />
               </a>
-              <h1 class=${styles['font-weight-400']}>Standalone - Typescript</h1>
+              <h1 class=${styles['font-weight-400']}>Standalone - TypeScript</h1>
               <a href="https://webpack.js.org/">
                   <img class=${styles['webpack-image']} 
                    src='images/webpack.png' 

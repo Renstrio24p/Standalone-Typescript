@@ -1,9 +1,17 @@
-import Footer from "../../components/Footer";
-import { setupCounter } from "../../components/Counter";
-import Rows from "../../components/Rows";
-import UniqueHash from "../security/hashes";
+export default async function Render() {
+  // Dynamically import the components and modules
+  const [
+    { default: Footer },
+    { setupCounter },
+    { default: Rows },
+    { default: UniqueHash },
+  ] = await Promise.all([
+    import("../../components/Footer"),
+    import("../../components/Counter"),
+    import("../../components/Rows"),
+    import("../security/hashes"),
+  ]);
 
-export default function Render() {
   // Get Render's ID
   const ContainerDOM = document.getElementById('container') as HTMLDivElement | null;
   const APP = document.getElementById('count') as HTMLButtonElement | null;
