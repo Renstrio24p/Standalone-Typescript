@@ -1,9 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpack = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
-const { execSync } = require('child_process');
 
-execSync('node webpack.test.ts');
 
 module.exports = {
   entry: './src/index.ts',
@@ -11,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/[name].[contenthash].js',
+    // publicPath: '/',
   },
   target: 'web',
   devServer: {
@@ -93,6 +93,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
+    new CopyWebpack({
+      patterns: [
+        {
+          from: 'src/images', // image directory origin
+          to: 'images', // image directory destination
+        },
+        {
+          from: 'src/videos', // videos directory origin
+          to: 'videos', // videos directory destination
+        },
+      ],
+    }),
+    new Dotenv(),
   ],
 };
 
