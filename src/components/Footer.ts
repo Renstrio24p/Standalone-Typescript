@@ -1,6 +1,8 @@
-import styles from '../assets/sass/modules/app.module.scss';
 
-export default function Footer(Footer : HTMLElement): void{
+export default async function Footer(Footer : HTMLDivElement): Promise<void>{
+
+    const stylesModule = await import('../assets/sass/modules/app.module.scss');
+    const styles = stylesModule.default;
 
     Footer.innerHTML = `
         <div class=${styles['d-flex-between']}>
