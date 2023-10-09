@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkstandalone_typescript=self.webpackChunkstandalone_typescript||[]).push([[681],{681:(t,e,n)=>{n.r(e),n.d(e,{default:()=>a});const s=new Set;function a(){let t;do{t=Math.random().toString(36).substring(2)}while(s.has(t));return s.add(t),t}}}]);
