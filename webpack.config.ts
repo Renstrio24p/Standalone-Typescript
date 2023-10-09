@@ -1,24 +1,24 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpack = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/[name].[contenthash].js',
-    // publicPath: '/', // this for server rendering 
   },
   target: 'web',
   devServer: {
     port: 4500,
     proxy: {
       '/api': {
-        target: 'http://localhost:8800', // Proxy Origin 
+        target: 'http://localhost:8800',
         secure: false,
         changeOrigin: true,
-      }
+      },
     },
     static: {
       directory: path.join(__dirname, 'src'),
@@ -33,8 +33,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.ts(x)?$/,
+        use: {
+          loader: 'esbuild-loader',
+          options: {
+            loader: 'tsx',
+            target: 'es6',
+          },
+        },
         exclude: /node_modules/,
       },
       {
@@ -43,7 +49,9 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true },
+            options: {
+              modules: true,
+            },
           },
           'sass-loader',
         ],
@@ -57,19 +65,37 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[name].[contenthash][ext]', // Output path for images
+          filename: 'images/[name].[contenthash][ext]',
         },
       },
       {
         test: /\.(mp4|webm|ogg|ogv)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'videos/[name].[contenthash][ext]', // Output path for videos
+          filename: 'videos/[name].[contenthash][ext]',
         },
       },
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          ecma: 2018,
+          compress: {
+            comparisons: false,
+            inline: 2,
+          },
+          output: {
+            comments: false,
+            ascii_only: true,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
     splitChunks: {
       chunks: 'all',
       minSize: 2000,
@@ -98,20 +124,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
-    new CopyWebpack({
+    new CopyWebpackPlugin({
       patterns: [
         {
-          from: 'src/images', // image directory origin
-          to: 'images', // image directory destination
+          from: 'src/images',
+          to: 'images',
         },
         {
-          from: 'src/videos', // videos directory origin
-          to: 'videos', // videos directory destination
+          from: 'src/videos',
+          to: 'videos',
         },
       ],
     }),
     new Dotenv(),
   ],
 };
-
-// You shouldn't Modify this configuration file for webpack bundler unless you are a tester for webpack js
