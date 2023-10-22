@@ -1,4 +1,4 @@
-export function setupCounter(element: HTMLButtonElement) {
+export default function Counter(element: HTMLButtonElement) {
     let counter = 0
     const setCounter = (count: number) => {
       counter = count
@@ -8,3 +8,4 @@ export function setupCounter(element: HTMLButtonElement) {
     setCounter(0)
   }
   
+  Object.defineProperty(Counter, 'name', { value: 'Counter' }); // Defining DOM for Counter

@@ -1,39 +1,43 @@
-export default async function Render() {
-  // Dynamically import the components and modules
-  const [
-    { default: Footer },
-    { setupCounter },
-    { default: Rows },
-    { default: UniqueHash },
-  ] = await Promise.all([
-    import("../../components/Footer"),
-    import("../../components/Counter"),
-    import("../../components/Rows"),
-    import("../security/hashes"),
-  ]);
+// Function to dynamically import all JavaScript files within a directory
+async function importAllComponents() {
+  const context = require.context('../../components', true, /\.ts$/); // Fetch all .js files
+  const componentModules = await Promise.all(
+    context.keys().map(context)
+  );
 
-  // Get Render's ID
-  const ContainerDOM = document.getElementById('container') as HTMLDivElement | null;
-  const APP = document.getElementById('count') as HTMLButtonElement | null;
-  const Row = document.getElementById('rows') as HTMLDivElement | null;
-  const Foot = document.getElementById('footer') as HTMLDivElement | null;
+  const components = {};
 
-  // Hash Applied
-  window.addEventListener('DOMContentLoaded', () => {
-    ContainerDOM?.setAttribute('id', UniqueHash());
-    APP?.setAttribute('id', UniqueHash());
-    Row?.setAttribute('id', UniqueHash());
-    Foot?.setAttribute('id', UniqueHash());
+  // Iterate through the imported modules and add them to the components object
+  componentModules.forEach((module) => {
+    const componentName = module.default ? module.default.name : null;
+    if (componentName) {
+      components[componentName] = module.default;
+    }
   });
 
-  // Render the JS Component
-  if (APP) {
-    setupCounter(APP);
+  return components;
+}
+
+export default async function Render() {
+  // Dynamically import all JavaScript files within the components directory
+  const components = await importAllComponents();
+
+  // Get all elements with a data-component attribute
+  const componentElements = document.querySelectorAll('[component]') as any;
+
+  // Dynamically render components based on their data-component attribute
+  for (const element of componentElements) {
+    const componentName = element.getAttribute('component');
+    
+    if (components[componentName]) {
+      components[componentName](element);
+    } else {
+      console.warn(`Component ${componentName} not found.`);
+    }
   }
-  if (Row) {
-    Rows(Row);
-  }
-  if (Foot) {
-    Footer(Foot);
-  }
+
+  // Hash Applied (if needed)
+  window.addEventListener('DOMContentLoaded', () => {
+    // Your hash code here
+  });
 }
