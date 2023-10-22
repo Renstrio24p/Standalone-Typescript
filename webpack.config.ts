@@ -48,7 +48,7 @@ module.exports = (env:any, argv:any) => {
           use: {
             loader: 'esbuild-loader',
             options: {
-              target: 'es2015',
+              target: 'esnext',
             },
           },
         },
@@ -57,7 +57,7 @@ module.exports = (env:any, argv:any) => {
           use: {
             loader: 'esbuild-loader',
             options: {
-              target: 'es2015',
+              target: 'esnext',
               minify: true,
             },
           },

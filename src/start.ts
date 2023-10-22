@@ -1,11 +1,9 @@
+const {default: styles} = await import('./assets/sass/modules/app.module.scss');
+
 export default async function Start(start: HTMLElement): Promise<void> {
-    // Dynamically import the styles
-    const stylesModule = await import('./assets/sass/modules/app.module.scss');
-    const styles = stylesModule.default;
   
-    start.innerHTML = `
+    start.innerHTML = (`
       <div id='container' class=${styles['d-flex-center-max']}>
-  
           <div class=${styles['d-flex-center-gap-20']}>
               <a href="https://www.typescriptlang.org/">
                   <img 
@@ -29,7 +27,7 @@ export default async function Start(start: HTMLElement): Promise<void> {
           <footer class=${styles['footer-abs-between']} id="footer"></footer>
   
       </div>
-    `;
+    `)
   
     // Dynamically import and execute the Render function
     const { default: Render } = await import('./assets/render/render');
