@@ -19,7 +19,6 @@
     "dotenv-webpack": "^8.0.1",
     "esbuild-loader": "^4.0.2",
     "html-webpack-plugin": "^5.5.3",
-    "prettier": "^2.8.8",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
