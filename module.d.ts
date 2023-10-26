@@ -10,6 +10,15 @@ declare module "*.module.scss" {
   export default classes;
 }
 
-declare var require: {
-  context(directory: string, useSubdirectories: boolean, regExp: RegExp): any;
-};
+declare module 'require-context' {
+  function requireContext(
+    directory: string,
+    useSubdirectories: boolean,
+    regExp: RegExp,
+  ): {
+    keys(): string[];
+    <T>(id: string): T;
+  }
+
+  export = requireContext;
+}
