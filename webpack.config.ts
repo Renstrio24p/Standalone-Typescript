@@ -4,9 +4,12 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = (env:any, argv:any) => {
+type module = {
+  mode: string
+}
+
+module.exports = (argv: module) => {
   const isProduction = argv.mode === 'production';
-  const startTime = Date.now();
 
   const devServerOptions = {
     port: '3600',
