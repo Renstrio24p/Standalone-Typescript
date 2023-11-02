@@ -21,7 +21,7 @@ export default function TypeScript(DOM: HTMLDivElement) {
                 </a>
             </div>
         <div>
-            <h1>Standalone TypeScript</h1>
+            <h1 class='title'>Standalone TypeScript</h1>
         <div class="ts-div2">
           <p>Learn Vanilla TS </p>
           <div class="ts">

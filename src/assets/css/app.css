@@ -143,9 +143,7 @@ div.ts {
 
 
 @media screen and (max-width: 1084px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+    
 
     .ts-div {
         text-align: center;
@@ -177,5 +175,16 @@ div.ts {
     .buttons {
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media only screen and (max-width:364px) {
+
+    h1.title {
+        font-size: 8vw;
+    }
+
+    .ts-div2 {
+        justify-content: center;
     }
 }
